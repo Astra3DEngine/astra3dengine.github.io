@@ -7,8 +7,8 @@
     },
     "hero": {
         "title": "Astra 3D Engine",
-        "subtitle": "专为 Web 3D 开发设计的引擎",
-        "description": "通过简单的操作创建精彩的 3D 游戏。基于 Three.js 和 React 构建，为 Web 开发者量身打造。",
+        "subtitle": "一个开玩笑的 3D 游戏引擎",
+        "description": "通过简单的操作创建简单的 3D 游戏。",
         "getStarted": "开始使用",
         "viewOnGithub": "查看 GitHub"
     },
