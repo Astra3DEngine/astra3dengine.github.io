@@ -1,0 +1,70 @@
+{
+    "nav": {
+        "features": "Features",
+        "techStack": "Tech Stack",
+        "quickStart": "Quick Start",
+        "github": "GitHub"
+    },
+    "hero": {
+        "title": "Astra 3D Engine",
+        "subtitle": "A dedicated engine for Web 3D development",
+        "description": "Create amazing 3D games with simple operations. Built with Three.js and React, designed for web developers.",
+        "getStarted": "Get Started",
+        "viewOnGithub": "View on GitHub"
+    },
+    "features": {
+        "title": "Features",
+        "viewport": {
+            "title": "3D Viewport",
+            "description": "Intuitive 3D viewport with perspective and orthographic modes, multi-viewport layout, and orientation cube for easy navigation."
+        },
+        "hierarchy": {
+            "title": "Scene Hierarchy",
+            "description": "Tree-structured scene hierarchy with drag-and-drop reordering, multi-selection, and context menu support."
+        },
+        "inspector": {
+            "title": "Inspector Panel",
+            "description": "Dynamic property inspector with transform controls, color pickers, and component-based editing."
+        },
+        "assets": {
+            "title": "Asset Management",
+            "description": "Import and manage 3D models, textures, and prefabs with built-in file browser and preview support."
+        },
+        "export": {
+            "title": "Export & Build",
+            "description": "Export your games as standalone web applications or build desktop versions with Electron."
+        },
+        "i18n": {
+            "title": "i18n Support",
+            "description": "Multi-language support with English, Chinese, Japanese, and Russian translations built-in."
+        }
+    },
+    "techStack": {
+        "title": "Tech Stack"
+    },
+    "quickStart": {
+        "title": "Quick Start",
+        "step1": {
+            "title": "Clone Repository",
+            "code": "git clone https://github.com/LanwyWriteXU/Astra3DEngine.git"
+        },
+        "step2": {
+            "title": "Install Dependencies",
+            "code": "cd Astra3DEngine && pnpm install"
+        },
+        "step3": {
+            "title": "Start Development",
+            "code": "pnpm run dev"
+        },
+        "requirements": "Requirements",
+        "nodejs": "Node.js >= 16",
+        "pnpm": "pnpm >= 8"
+    },
+    "footer": {
+        "copyright": "Copyright 2024 Cyberexplorer. All rights reserved."
+    },
+    "lang": {
+        "en": "English",
+        "zh": "Chinese"
+    }
+}

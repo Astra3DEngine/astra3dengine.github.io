@@ -1,0 +1,91 @@
+/**
+ * CSS Variables - Theme Configuration
+ * Theme color: #0099FF
+ */
+
+:root {
+    --color-primary: #0099FF;
+    --color-primary-dark: #007ACC;
+    --color-primary-light: #33ADFF;
+    --color-primary-bg: rgba(0, 153, 255, 0.1);
+    
+    --color-secondary: #66CCFF;
+    --color-accent: #0073BF;
+    
+    --color-text-primary: #1a1a2e;
+    --color-text-secondary: #4a4a68;
+    --color-text-muted: #8888a0;
+    --color-text-light: #ffffff;
+    
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #f8f9fc;
+    --color-bg-tertiary: #eef1f6;
+    --color-bg-dark: #1a1a2e;
+    
+    --color-border: #e0e4eb;
+    --color-border-light: #f0f2f5;
+    
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.12);
+    --shadow-primary: 0 4px 14px rgba(0, 153, 255, 0.25);
+    
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-full: 9999px;
+    
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-family-mono: 'SF Mono', 'Fira Code', 'Fira Mono', Consolas, monospace;
+    
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 2rem;
+    --font-size-4xl: 2.5rem;
+    --font-size-5xl: 3rem;
+    
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    
+    --line-height-tight: 1.25;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+    
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    --spacing-4xl: 6rem;
+    
+    --transition-fast: 150ms ease;
+    --transition-normal: 250ms ease;
+    --transition-slow: 350ms ease;
+    
+    --container-max: 1200px;
+    --header-height: 64px;
+    
+    --z-index-dropdown: 100;
+    --z-index-sticky: 200;
+    --z-index-fixed: 300;
+    --z-index-modal: 400;
+    --z-index-tooltip: 500;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --transition-fast: 0ms;
+        --transition-normal: 0ms;
+        --transition-slow: 0ms;
+    }
+}

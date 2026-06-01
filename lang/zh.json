@@ -1,0 +1,70 @@
+{
+    "nav": {
+        "features": "功能特性",
+        "techStack": "技术栈",
+        "quickStart": "快速开始",
+        "github": "GitHub"
+    },
+    "hero": {
+        "title": "Astra 3D Engine",
+        "subtitle": "专为 Web 3D 开发设计的引擎",
+        "description": "通过简单的操作创建精彩的 3D 游戏。基于 Three.js 和 React 构建，为 Web 开发者量身打造。",
+        "getStarted": "开始使用",
+        "viewOnGithub": "查看 GitHub"
+    },
+    "features": {
+        "title": "功能特性",
+        "viewport": {
+            "title": "3D 视口",
+            "description": "直观的 3D 视口，支持透视和正交模式、多视口布局以及定向球，便于场景导航。"
+        },
+        "hierarchy": {
+            "title": "场景层级",
+            "description": "树形结构的场景层级面板，支持拖拽排序、多选操作和右键菜单。"
+        },
+        "inspector": {
+            "title": "属性检查器",
+            "description": "动态属性检查器，包含变换控件、颜色选择器和组件化编辑功能。"
+        },
+        "assets": {
+            "title": "资源管理",
+            "description": "导入和管理 3D 模型、纹理和预制件，内置文件浏览器和预览支持。"
+        },
+        "export": {
+            "title": "导出与构建",
+            "description": "将游戏导出为独立的 Web 应用程序，或使用 Electron 构建桌面版本。"
+        },
+        "i18n": {
+            "title": "多语言支持",
+            "description": "内置英语、中文、日语和俄语翻译的多语言支持。"
+        }
+    },
+    "techStack": {
+        "title": "技术栈"
+    },
+    "quickStart": {
+        "title": "快速开始",
+        "step1": {
+            "title": "克隆仓库",
+            "code": "git clone https://github.com/LanwyWriteXU/Astra3DEngine.git"
+        },
+        "step2": {
+            "title": "安装依赖",
+            "code": "cd Astra3DEngine && pnpm install"
+        },
+        "step3": {
+            "title": "启动开发",
+            "code": "pnpm run dev"
+        },
+        "requirements": "系统要求",
+        "nodejs": "Node.js >= 16",
+        "pnpm": "pnpm >= 8"
+    },
+    "footer": {
+        "copyright": "Copyright 2024 Cyberexplorer. 保留所有权利。"
+    },
+    "lang": {
+        "en": "英语",
+        "zh": "中文"
+    }
+}
