@@ -1,0 +1,2 @@
+const t="Auto Save",e="Automatically save scene to local storage to prevent data loss",a="Auto-save plugin activated",s="Auto-save plugin deactivated",o="Auto-save started, interval: {0} seconds",d="Auto-save completed",c="Auto-save failed: {0}",n={name:t,description:e,activated:a,deactivated:s,started:o,saved:d,failed:c};export{a as activated,s as deactivated,n as default,e as description,c as failed,t as name,d as saved,o as started};
+//# sourceMappingURL=en-CNdH8UfK.js.map
