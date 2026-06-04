@@ -1,0 +1,2 @@
+const e="Modern Dark Theme",t="A modern dark theme with softer colors and better contrast",r="Modern Dark theme plugin activated",d="Modern Dark theme plugin deactivated",a="Theme registered: {0}",i="Theme registration failed",n="Theme unregistered: {0}",s={name:e,description:t,activated:r,deactivated:d,registered:a,registerFailed:i,unregistered:n};export{r as activated,d as deactivated,s as default,t as description,e as name,i as registerFailed,a as registered,n as unregistered};
+//# sourceMappingURL=en-B3MTXscn.js.map

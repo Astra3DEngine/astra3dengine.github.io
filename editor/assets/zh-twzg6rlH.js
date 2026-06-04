@@ -1,0 +1,2 @@
+const t="对象统计",s="在控制台显示场景中对象的统计信息",a="对象统计插件已激活",e="对象统计插件已停用",o="=== 场景统计 ===",c="总对象数: {0}",i="资源数: {0}",n="预制件数: {0}",d="对象类型分布:",l={name:t,description:s,activated:a,deactivated:e,statsTitle:o,totalObjects:c,totalAssets:i,totalPrefabs:n,typeDistribution:d};export{a as activated,e as deactivated,l as default,s as description,t as name,o as statsTitle,i as totalAssets,c as totalObjects,n as totalPrefabs,d as typeDistribution};
+//# sourceMappingURL=zh-twzg6rlH.js.map

@@ -1,0 +1,2 @@
+const e="Example Plugin",t="An example plugin demonstrating the plugin system basics",d="Example plugin activated!",a="Example plugin deactivated",c="Object added: {0}",n="Object deleted: {0}",l="Scene saved",o="Hello! From example plugin 👋",s={name:e,description:t,activated:d,deactivated:a,objectAdded:c,objectDeleted:n,sceneSaved:l,hello:o};export{d as activated,a as deactivated,s as default,t as description,o as hello,e as name,c as objectAdded,n as objectDeleted,l as sceneSaved};
+//# sourceMappingURL=en-CsP0F2NY.js.map
