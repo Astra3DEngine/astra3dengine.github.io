@@ -1,0 +1,37 @@
+{
+  "latest": "0.0.1-beta3",
+  "tag": "v0.0.1-beta3",
+  "assets": {
+    "windows": {
+      "setup": {
+        "x64": "Astra 3D Engine-v0.1.0-windows-x64-setup.exe",
+        "ia32": "Astra 3D Engine-v0.1.0-windows-ia32-setup.exe"
+      },
+      "portable": {
+        "x64": "Astra 3D Engine-v0.1.0-windows-x64-portable.exe"
+      }
+    },
+    "macos": {
+      "dmg": {
+        "x64": "Astra 3D Engine-v0.1.0-macos-x64.dmg",
+        "arm64": "Astra 3D Engine-v0.1.0-macos-arm64.dmg"
+      },
+      "zip": {
+        "x64": "Astra 3D Engine-v0.1.0-macos-x64.zip",
+        "arm64": "Astra 3D Engine-v0.1.0-macos-arm64.zip"
+      }
+    },
+    "linux": {
+      "appimage": {
+        "x64": ""
+      },
+      "deb": {
+        "x64": ""
+      },
+      "tarball": {
+        "x64": "Astra 3D Engine-v0.1.0-linux-x64.tar.gz"
+      }
+    }
+  },
+  "download_base": "https://github.com/Astra3DEngine/Astra3DEngine/releases/download"
+}
