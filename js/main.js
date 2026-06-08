@@ -1,18 +1,18 @@
 /**
- * Main JavaScript - Interactive functionality
- * @description Handles navigation, scroll effects, and animations
+ * 主 JavaScript - 交互功能
+ * @description 处理导航、滚动效果和动画
  */
 
 (function() {
     'use strict';
 
-    // Current section tracking
+    // 当前区域追踪
     let currentSection = 'hero';
     let isScrolling = false;
     let scrollTimeout = null;
 
     /**
-     * Initialize navigation toggle for mobile
+     * 初始化移动端导航切换
      * @function initNavigation
      */
     function initNavigation() {
@@ -33,7 +33,7 @@
     }
 
     /**
-     * Initialize scroll effects for header
+     * 初始化头部滚动效果
      * @function initScrollEffects
      */
     function initScrollEffects() {
@@ -56,7 +56,7 @@
     }
 
     /**
-     * Initialize fade-in animations on scroll
+     * 初始化滚动时的淡入动画
      * @function initFadeAnimations
      */
     function initFadeAnimations() {
@@ -99,7 +99,7 @@
     }
 
     /**
-     * Initialize smooth scroll for anchor links
+     * 初始化锚点链接的平滑滚动
      * @function initSmoothScroll
      */
     function initSmoothScroll() {
@@ -117,9 +117,9 @@
     }
 
     /**
-     * Smooth scroll to target element
+     * 平滑滚动到目标元素
      * @function smoothScrollTo
-     * @param {HTMLElement} targetElement - Target element to scroll to
+     * @param {HTMLElement} targetElement - 要滚动到的目标元素
      */
     function smoothScrollTo(targetElement) {
         isScrolling = true;
@@ -128,7 +128,7 @@
             block: 'start'
         });
 
-        // Reset scrolling flag after animation
+        // 动画结束后重置滚动标志
         clearTimeout(scrollTimeout);
         scrollTimeout = setTimeout(function() {
             isScrolling = false;
@@ -136,7 +136,7 @@
     }
 
     /**
-     * Initialize page navigation (side index)
+     * 初始化页面导航（侧边索引）
      * @function initPageNav
      */
     function initPageNav() {
@@ -149,7 +149,7 @@
 
         if (!pageNav) return;
 
-        // Initial check - hide nav if hero is visible on load
+        // 初始检查 - 页面加载时如果 hero 可见则隐藏导航
         function checkInitialVisibility() {
             if (!heroSection || !footer) return;
             
@@ -374,7 +374,7 @@
     }
 
     /**
-     * Initialize language manager
+     * 初始化语言管理器
      * @async
      * @function initLanguageManager
      */
@@ -387,7 +387,7 @@
     }
 
     /**
-     * Initialize features carousel (card stack)
+     * 初始化特性轮播（扑克牌堆叠）
      * @function initFeaturesCarousel
      */
     function initFeaturesCarousel() {
@@ -397,7 +397,7 @@
         
         if (!carousel || cards.length === 0) return;
         
-        // Fix data-index for all cards
+        // 修复所有卡片的 data-index
         cards.forEach(function(card, index) {
             card.setAttribute('data-index', index);
         });
@@ -407,17 +407,17 @@
         let autoRotateInterval = null;
         
         /**
-         * Calculate relative position with circular wrapping
+         * 计算相对位置（带循环包裹）
          * @function getRelativePosition
-         * @param {number} cardIndex - Card index
-         * @param {number} centerIndex - Center card index
-         * @returns {number} Relative position (-2 to 2 for visible, others for hidden)
+         * @param {number} cardIndex - 卡片索引
+         * @param {number} centerIndex - 中心卡片索引
+         * @returns {number} 相对位置（-2 到 2 为可见，其他为隐藏）
          */
         function getRelativePosition(cardIndex, centerIndex) {
-            // Calculate relative position with circular wrapping
+            // 计算相对位置，带循环包裹
             let relativePos = cardIndex - centerIndex;
             
-            // Wrap around for circular effect
+            // 循环包裹效果
             if (relativePos > totalCards / 2) {
                 relativePos -= totalCards;
             } else if (relativePos < -totalCards / 2) {
@@ -428,20 +428,20 @@
         }
         
         /**
-         * Update carousel position
+         * 更新轮播位置
          * @function updateCarousel
-         * @param {number} centerIndex - Center card index
+         * @param {number} centerIndex - 中心卡片索引
          */
         function updateCarousel(centerIndex) {
             cards.forEach(function(card, index) {
-                // Remove all visibility classes
+                // 移除所有可见性类
                 card.classList.remove('visible-1', 'visible-2', 'visible-3', 'visible-4', 'visible-5');
                 card.classList.remove('hidden-left', 'hidden-right');
                 
-                // Calculate relative position with circular wrapping
+                // 计算相对位置，带循环包裹
                 const relativePos = getRelativePosition(index, centerIndex);
                 
-                // Assign visibility classes based on position
+                // 根据位置分配可见性类
                 if (relativePos === -2) {
                     card.classList.add('visible-1');
                 } else if (relativePos === -1) {
@@ -459,7 +459,7 @@
                 }
             });
             
-            // Update dots
+            // 更新指示点
             dots.forEach(function(dot, index) {
                 if (index === centerIndex) {
                     dot.classList.add('active');
@@ -472,7 +472,7 @@
         }
         
         /**
-         * Rotate to next card (circular)
+         * 轮播到下一张卡片（循环）
          * @function rotateNext
          */
         function rotateNext() {
@@ -481,7 +481,7 @@
         }
         
         /**
-         * Start auto rotation
+         * 开始自动轮播
          * @function startAutoRotate
          */
         function startAutoRotate() {
@@ -490,7 +490,7 @@
         }
         
         /**
-         * Stop auto rotation
+         * 停止自动轮播
          * @function stopAutoRotate
          */
         function stopAutoRotate() {
@@ -500,11 +500,11 @@
             }
         }
         
-        // Initialize carousel
+        // 初始化轮播
         updateCarousel(0);
         startAutoRotate();
         
-        // Click handlers for dots
+        // 指示点点击事件
         dots.forEach(function(dot) {
             dot.addEventListener('click', function() {
                 const targetIndex = parseInt(this.getAttribute('data-index'));
@@ -514,7 +514,7 @@
             });
         });
         
-        // Click handlers for cards
+        // 卡片点击事件
         cards.forEach(function(card) {
             card.addEventListener('click', function() {
                 const cardIndex = parseInt(this.getAttribute('data-index'));
@@ -524,13 +524,13 @@
             });
         });
         
-        // Pause on hover
+        // 悬停时暂停自动轮播
         carousel.addEventListener('mouseenter', stopAutoRotate);
         carousel.addEventListener('mouseleave', startAutoRotate);
     }
 
     /**
-     * Initialize all functionality when DOM is ready
+     * DOM 加载完成后初始化所有功能
      */
     function init() {
         initNavigation();

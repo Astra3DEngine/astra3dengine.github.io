@@ -1,24 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- 永远不要忘记“A Joking 3D Engine”是Astra 3D Engine的设计理念。 -->
+<!-- 
+    Astra 3D Engine 官网
+    
+    设计理念："一个玩笑般的3D引擎" - 永远不要忘记这个设计理念
+    
+    结构：
+    - Hero 区域：带有大背景 Logo 的动画标题
+    - Features 区域：14 个特性卡片的扑克牌堆叠轮播
+    - Use 区域：下载选项（在线版、发行版、源代码）
+    - Footer：版权和链接
+    
+    特性：
+    - CSS Scroll Snap 实现整页滚动
+    - 多语言支持（中文/英文）
+    - 全设备响应式设计
+    - 3D 扑克牌堆叠动画
+-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Astra 3D Engine - A dedicated engine for Web 3D development">
     <meta name="keywords" content="3D Engine, Web 3D, Game Engine, Three.js, React, WebGL">
     <title>Astra 3D Engine - A Joking 3D Engine</title>
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/components.css">
+    
+    <!-- CSS Files - loaded in order for proper cascade -->
+    <link rel="stylesheet" href="css/variables.css"> <!-- 设计令牌 -->
+    <link rel="stylesheet" href="css/base.css"> <!-- 基础样式 -->
+    <link rel="stylesheet" href="css/layout.css"> <!-- 布局结构 -->
+    <link rel="stylesheet" href="css/components.css"> <!-- UI 组件 -->
+    
     <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
 </head>
 <body>
+    <!-- ============================================
+         页面导航（侧边索引）
+         固定在左侧的导航点，在 hero/footer 区域隐藏
+         ============================================ -->
     <nav class="page-nav" aria-label="Page navigation">
         <div class="page-nav-dots">
+            <!-- 连接导航点的线条 -->
             <div class="page-nav-line"></div>
             <div class="page-nav-line-thick"></div>
             <div class="page-nav-line-medium"></div>
+            
+            <!-- 各区域的导航点 -->
             <button class="page-nav-item" data-section="hero" aria-label="Go to Hero section">
                 <span class="page-nav-dot"></span>
                 <span class="page-nav-label" data-i18n="pageNav.home">Home</span>
@@ -33,6 +59,11 @@
             </button>
         </div>
     </nav>
+    
+    <!-- ============================================
+         头部
+         固定头部，包含 Logo、语言切换、GitHub 链接
+         ============================================ -->
     <header class="header">
         <nav class="nav">
             <div class="nav-brand">
@@ -49,6 +80,7 @@
                     </svg>
                 </a></li>
             </ul>
+            <!-- Hamburger menu button for mobile (hidden on desktop) -->
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
                     <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
@@ -58,12 +90,22 @@
     </header>
 
     <main>
+        <!-- ============================================
+             Hero 区域
+             全屏着陆区域，带有艺术化标题布局
+             中文汉字 "阿斯特拉" + "三地樱井"
+             英文副标题 "Astra 3D Engine"
+             ============================================ -->
         <section class="hero">
+            <!-- 大背景 Logo（半透明） -->
             <div class="hero-logo-bg">
                 <img src="assets/logo.svg" alt="Astra 3D Engine Logo">
             </div>
+            
+            <!-- 主内容容器 -->
             <div class="hero-content">
                 <div class="hero-text-group">
+                    <!-- "阿斯特拉" - 主标题组 -->
                     <div class="hero-group-astra">
                         <span class="hero-zh-char hero-zh-char-1">阿</span>
                         <div class="hero-zh-middle">
@@ -72,11 +114,15 @@
                         </div>
                         <span class="hero-zh-char hero-zh-char-4">拉</span>
                     </div>
+                    
+                    <!-- 英文副标题 -->
                     <div class="hero-title-en">
                         <span class="hero-en-word hero-en-1">Astra</span>
                         <span class="hero-en-word hero-en-2">3D</span>
                         <span class="hero-en-word hero-en-3">Engine</span>
                     </div>
+                    
+                    <!-- "三地樱井" - 次标题组 -->
                     <div class="hero-group-sandi">
                         <span class="hero-zh-char hero-zh-char-5">三</span>
                         <span class="hero-zh-char hero-zh-char-6">地</span>
@@ -85,14 +131,21 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- 背景画布，用于粒子效果 -->
             <div class="hero-bg" id="hero-bg"></div>
             <div class="hero-bg-overlay"></div>
         </section>
 
+        <!-- ============================================
+             Features 区域
+             14 个特性卡片的扑克牌堆叠轮播
+             扑克牌式 3D 堆叠布局
+             ============================================ -->
         <section id="features" class="section features">
             <h2 class="section-title" data-i18n="features.title">Features</h2>
             <div class="features-carousel">
-                <!-- 1. Web 3D Game Engine -->
+                <!-- 1. Web 3D 游戏引擎 -->
                 <div class="feature-card-stack" data-index="0">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24" width="32" height="32">
@@ -103,7 +156,7 @@
                     <h3 class="feature-title" data-i18n="features.webEngine">Web 3D Game Engine</h3>
                     <p class="feature-desc" data-i18n="features.webEngineDesc">A Joking 3D Engine</p>
                 </div>
-                <!-- 2. Editor & Runtime Separation -->
+                <!-- 2. 编辑器与运行时分离 -->
                 <div class="feature-card-stack" data-index="1">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24" width="32" height="32">
@@ -116,7 +169,7 @@
                     <p class="feature-desc" data-i18n="features.editorRuntimeDesc">Exported games run independently without editor</p>
                     <span class="feature-badge" data-i18n="features.inDevelopment">In Development</span>
                 </div>
-                <!-- 3. Multi-Viewport Layout -->
+                <!-- 3. 多视口布局 -->
                 <div class="feature-card-stack" data-index="2">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24" width="32" height="32">
@@ -129,7 +182,7 @@
                     <h3 class="feature-title" data-i18n="features.multiViewport">Multi-Viewport Layout</h3>
                     <p class="feature-desc" data-i18n="features.multiViewportDesc">4-view layout: perspective + orthographic views</p>
                 </div>
-                <!-- 4. Orientation Cube Navigation -->
+                <!-- 4. 方位立方体导航 -->
                 <div class="feature-card-stack" data-index="3">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24" width="32" height="32">
@@ -285,12 +338,20 @@
             </div>
         </section>
 
+        <!-- ============================================
+             Use 区域（下载）
+             三个下载选项：在线版、发行版、源代码
+             全屏高度区域，使用 CSS Scroll Snap
+             ============================================ -->
         <section id="download" class="section download">
             <div class="container">
                 <h2 class="section-title" data-i18n="download.title">Use</h2>
                 <div class="download-content">
                     <p class="download-description" data-i18n="download.description">Get the latest version of Astra 3D Engine and start creating amazing 3D experiences!</p>
+                    
+                    <!-- 三列网格布局：在线版、发行版、源代码 -->
                     <div class="download-options">
+                        <!-- 选项 1：在线版 -->
                         <div class="download-card">
                             <div class="download-icon">
                                 <svg viewBox="0 0 24 24" width="48" height="48">
@@ -300,10 +361,13 @@
                             <h3 class="download-title" data-i18n="download.webVersion">Online Version</h3>
                             <p class="download-info" data-i18n="download.webInfo">Run directly in your browser, no installation required</p>
                             <a href="/editor/" class="download-btn" data-i18n="download.launch">Launch Online Version</a>
+                            <!-- 开发版本链接 -->
                             <div class="download-dev-link">
                                 <a href="/develop/" data-i18n="download.devVersion">Development Version</a>
                             </div>
                         </div>
+                        
+                        <!-- 选项 2：发行版 -->
                         <div class="download-card">
                             <div class="download-icon">
                                 <svg viewBox="0 0 24 24" width="48" height="48">
@@ -314,6 +378,8 @@
                             <p class="download-info" data-i18n="download.releaseInfo">Download the latest stable release from GitHub</p>
                             <a href="https://github.com/LanwyWriteXU/Astra3DEngine/releases" target="_blank" class="download-btn" data-i18n="download.downloadRelease">Download Release</a>
                         </div>
+                        
+                        <!-- 选项 3：源代码 -->
                         <div class="download-card">
                             <div class="download-icon">
                                 <svg viewBox="0 0 24 24" width="48" height="48">
@@ -330,6 +396,11 @@
         </section>
     </main>
 
+    <!-- ============================================
+         Footer
+         版权和链接
+         深色背景，使用 scroll-snap-align: end
+         ============================================ -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -350,10 +421,21 @@
         </div>
     </footer>
 
+    <!-- ============================================
+         Scripts
+         语言管理器、Three.js、背景模型、主逻辑
+         ============================================ -->
+    <!-- 语言切换模块 -->
     <script src="js/lang.js"></script>
+    
+    <!-- Three.js 库，用于 3D 背景 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    
+    <!-- 背景 3D 模型渲染器 -->
     <script src="js/model-background.js"></script>
+    
+    <!-- 主要交互功能 -->
     <script src="js/main.js"></script>
 </body>
 </html>

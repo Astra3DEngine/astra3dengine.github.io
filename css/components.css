@@ -1,6 +1,22 @@
 /**
- * Component Styles - Reusable UI components
+ * 组件样式 - 可复用的 UI 组件
+ * 
+ * 本文件包含可复用 UI 组件的样式，包括：
+ * - 按钮 (.btn-primary, .btn-secondary)
+ * - 特性卡片及悬停效果
+ * - 下载区域及响应式网格布局
+ * - 页面导航（侧边索引点）
+ * - 特性轮播（扑克牌堆叠动画）
+ * 
+ * 响应式断点：
+ * - 1024px：平板设备
+ * - 768px：小平板和大屏手机
+ * - 480px：小屏手机
  */
+
+/* ============================================
+   按钮样式
+   ============================================ */
 
 .btn {
     display: inline-flex;
@@ -16,6 +32,7 @@
     white-space: nowrap;
 }
 
+/* 主按钮 - 蓝色背景，悬停时上浮 */
 .btn-primary {
     background: var(--color-primary);
     color: var(--color-text-light);
@@ -24,14 +41,15 @@
 
 .btn-primary:hover {
     background: var(--color-primary-dark);
-    transform: translateY(-2px);
+    transform: translateY(-2px); /* 悬停上浮效果 */
     box-shadow: 0 6px 20px rgba(0, 153, 255, 0.35);
 }
 
 .btn-primary:active {
-    transform: translateY(0);
+    transform: translateY(0); /* 点击时恢复 */
 }
 
+/* 次按钮 - 透明背景带边框 */
 .btn-secondary {
     background: transparent;
     color: var(--color-text-primary);
@@ -43,6 +61,10 @@
     color: var(--color-primary);
     background: var(--color-primary-bg);
 }
+
+/* ============================================
+   特性卡片样式
+   ============================================ */
 
 .feature-card {
     background: var(--color-bg-primary);
@@ -115,11 +137,17 @@
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
+/* ============================================
+   滚动淡入动画样式
+   元素滚动进入视口时的渐显效果
+   ============================================ */
+
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
+/* 延迟类 - 创建波浪式渐显效果 */
 .fade-in-delay-1 {
     transition-delay: 0.1s;
 }
@@ -144,6 +172,11 @@
     transition-delay: 0.6s;
 }
 
+/* ============================================
+   语言切换按钮
+   点击切换中文和英文
+   ============================================ */
+
 .lang-selector {
     position: relative;
 }
@@ -167,18 +200,37 @@
     background: var(--color-primary-bg);
 }
 
-/* Hero Section */
+@media (max-width: 768px) {
+    .lang-toggle {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: var(--font-size-xs);
+    }
+}
+
+/* ============================================
+   下载区域（使用版块）
+   全屏高度区域，包含三个下载选项
+   使用 CSS Scroll Snap 实现整页滚动
+   ============================================ */
+
 .download {
     background: var(--color-bg-secondary);
-    height: 100vh;
+    min-height: 100vh; /* 最小高度，移动端可扩展 */
+    height: auto; /* 允许内容自然扩展 */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: var(--spacing-4xl) var(--spacing-lg);
+    scroll-snap-align: start; /* 滚动时吸附到此区域 */
+    scroll-margin-top: var(--header-height); /* 考虑固定头部 */
 }
 
 .download .container {
     width: 100%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
 }
 
 .download-content {
@@ -193,6 +245,7 @@
     line-height: var(--line-height-relaxed);
 }
 
+/* 三列网格布局 - 在线版、发行版、源代码 */
 .download-options {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -294,16 +347,93 @@
 }
 
 @media (max-width: 768px) {
+    .download {
+        padding: var(--spacing-2xl) var(--spacing-md);
+        min-height: auto;
+    }
+    
     .download-options {
         grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        padding: 0;
     }
     
     .download-card {
         padding: var(--spacing-xl);
     }
+    
+    .download-description {
+        font-size: var(--font-size-sm);
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .download-title {
+        font-size: var(--font-size-lg);
+    }
+    
+    .download-info {
+        font-size: var(--font-size-sm);
+    }
+    
+    .download-btn {
+        padding: var(--spacing-md) var(--spacing-lg);
+        font-size: var(--font-size-sm);
+    }
 }
 
-/* Page Navigation (Side Index) */
+@media (max-width: 480px) {
+    .download {
+        padding: var(--spacing-xl) var(--spacing-sm);
+    }
+    
+    .download-options {
+        gap: var(--spacing-md);
+        padding: 0;
+    }
+    
+    .download-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .download-icon {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .download-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .download-description {
+        font-size: var(--font-size-xs);
+    }
+    
+    .download-title {
+        font-size: var(--font-size-base);
+    }
+    
+    .download-info {
+        font-size: var(--font-size-xs);
+    }
+    
+    .download-btn {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: var(--font-size-xs);
+    }
+    
+    .download-dev-link {
+        font-size: var(--font-size-xs);
+    }
+}
+
+/* ============================================
+   页面导航（侧边索引）
+   固定在左侧的导航点
+   用连接线显示当前区域位置
+   在 hero 和 footer 区域隐藏
+   ============================================ */
+
 .page-nav {
     position: fixed;
     left: var(--spacing-xl);
@@ -318,12 +448,13 @@
     transition: opacity var(--transition-normal), visibility var(--transition-normal);
 }
 
+/* 仅在 features 和 download 区域显示导航 */
 .page-nav.visible {
     opacity: 1;
     visibility: visible;
 }
 
-/* Container for dots and lines */
+/* 点和线的容器 */
 .page-nav-dots {
     display: flex;
     flex-direction: column;
@@ -331,7 +462,7 @@
     position: relative;
 }
 
-/* Vertical line connecting all dots */
+/* 连接所有点的垂直线 - 基础细线 */
 .page-nav-line {
     position: absolute;
     left: 50%;
@@ -342,6 +473,7 @@
     z-index: 0;
 }
 
+/* 激活点附近的粗线 - 显示距离当前区域的远近 */
 .page-nav-line-thick {
     position: absolute;
     left: 50%;
@@ -353,6 +485,7 @@
     display: none;
 }
 
+/* 中等粗细的线 - 粗线和细线之间的过渡 */
 .page-nav-line-medium {
     position: absolute;
     left: 50%;
@@ -436,6 +569,7 @@
 @media (max-width: 768px) {
     .page-nav {
         left: var(--spacing-sm);
+        transform: translateY(-50%) scale(0.8);
     }
     
     .page-nav-dot {
@@ -454,25 +588,64 @@
     
     .page-nav-label {
         left: 20px;
+        font-size: var(--font-size-xs);
+        padding: 4px 8px;
+    }
+    
+    .page-nav-line,
+    .page-nav-line-thick,
+    .page-nav-line-medium {
+        width: 1px;
     }
 }
 
-/* Features Section - Card Stack Carousel */
+@media (max-width: 480px) {
+    .page-nav {
+        display: none;
+    }
+}
+
+/* ============================================
+   特性区域 - 扑克牌堆叠轮播
+   带有 3D 透视效果的扑克牌堆叠样式
+   每 4 秒自动轮播，悬停时暂停
+   显示 5 张可见卡片，中心卡片高亮
+   ============================================ */
+
 .features {
     background: var(--color-bg-primary);
-    height: 100vh;
+    min-height: 100vh; /* 最小高度，移动端可扩展 */
+    height: auto; /* 允许内容自然扩展 */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    overflow: hidden; /* 隐藏视口外的卡片 */
     position: relative;
+    padding: var(--spacing-4xl) 0;
+    scroll-snap-align: start; /* 滚动时吸附到此区域 */
+    scroll-margin-top: var(--header-height); /* 考虑固定头部 */
 }
 
 .features .section-title {
     margin-bottom: var(--spacing-3xl);
 }
 
+@media (max-width: 768px) {
+    .features .section-title {
+        margin-bottom: var(--spacing-xl);
+        font-size: var(--font-size-xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .features .section-title {
+        margin-bottom: var(--spacing-lg);
+        font-size: var(--font-size-lg);
+    }
+}
+
+/* 轮播容器 - 带有 3D 透视效果用于卡片旋转 */
 .features-carousel {
     position: relative;
     width: 100%;
@@ -480,9 +653,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    perspective: 1200px;
+    perspective: 1200px; /* 3D 透视效果 */
 }
 
+/* 单个特性卡片 - 扑克牌式竖向矩形 */
 .feature-card-stack {
     position: absolute;
     width: 260px;
@@ -620,30 +794,40 @@
 }
 
 @media (max-width: 768px) {
+    .features {
+        min-height: auto;
+        padding: var(--spacing-2xl) 0;
+    }
+    
     .feature-card-stack {
-        width: 180px;
-        height: 260px;
+        width: 160px;
+        height: 240px;
         padding: var(--spacing-md);
     }
     
     .feature-card-stack.visible-1 {
-        transform: translateX(-180px) scale(0.85) rotateY(15deg);
+        transform: translateX(-140px) scale(0.85) rotateY(15deg);
+        opacity: 0.3;
     }
     
     .feature-card-stack.visible-2 {
-        transform: translateX(-90px) scale(0.92) rotateY(8deg);
+        transform: translateX(-70px) scale(0.92) rotateY(8deg);
+        opacity: 0.6;
     }
     
     .feature-card-stack.visible-3 {
         transform: translateX(0) scale(1) rotateY(0deg);
+        opacity: 1;
     }
     
     .feature-card-stack.visible-4 {
-        transform: translateX(90px) scale(0.92) rotateY(-8deg);
+        transform: translateX(70px) scale(0.92) rotateY(-8deg);
+        opacity: 0.6;
     }
     
     .feature-card-stack.visible-5 {
-        transform: translateX(180px) scale(0.85) rotateY(-15deg);
+        transform: translateX(140px) scale(0.85) rotateY(-15deg);
+        opacity: 0.3;
     }
     
     .feature-icon {
@@ -657,6 +841,83 @@
     }
     
     .features-carousel {
-        height: 320px;
+        height: 300px;
+    }
+    
+    .feature-title {
+        font-size: var(--font-size-sm);
+    }
+    
+    .feature-desc {
+        font-size: var(--font-size-xs);
+    }
+    
+    .feature-badge {
+        font-size: 10px;
+        padding: 2px 6px;
+    }
+    
+    .carousel-dots {
+        gap: var(--spacing-sm);
+    }
+    
+    .carousel-dot {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .carousel-dot.active {
+        width: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .features {
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .feature-card-stack {
+        width: 140px;
+        height: 220px;
+        padding: var(--spacing-sm);
+    }
+    
+    .feature-card-stack.visible-1 {
+        transform: translateX(-100px) scale(0.85) rotateY(15deg);
+        opacity: 0.2;
+    }
+    
+    .feature-card-stack.visible-2 {
+        transform: translateX(-50px) scale(0.92) rotateY(8deg);
+        opacity: 0.5;
+    }
+    
+    .feature-card-stack.visible-3 {
+        transform: translateX(0) scale(1) rotateY(0deg);
+        opacity: 1;
+    }
+    
+    .feature-card-stack.visible-4 {
+        transform: translateX(50px) scale(0.92) rotateY(-8deg);
+        opacity: 0.5;
+    }
+    
+    .feature-card-stack.visible-5 {
+        transform: translateX(100px) scale(0.85) rotateY(-15deg);
+        opacity: 0.2;
+    }
+    
+    .features-carousel {
+        height: 280px;
+    }
+    
+    .feature-icon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .feature-icon svg {
+        width: 20px;
+        height: 20px;
     }
 }

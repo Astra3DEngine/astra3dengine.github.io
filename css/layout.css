@@ -1,6 +1,22 @@
 /**
- * Layout Styles - Page structure and sections
+ * 布局样式 - 页面结构和区域
+ * 
+ * 本文件包含页面布局样式，包括：
+ * - 容器和区域结构
+ * - 固定头部及导航
+ * - Hero 区域及动画标题
+ * - Footer 及版权信息
+ * - CSS Scroll Snap 实现整页滚动
+ * 
+ * 响应式断点：
+ * - 1024px：平板设备
+ * - 768px：小平板和大屏手机
+ * - 480px：小屏手机
  */
+
+/* ============================================
+   容器和区域样式
+   ============================================ */
 
 .container {
     width: 100%;
@@ -9,12 +25,14 @@
     padding: 0 var(--spacing-lg);
 }
 
+/* 基础区域样式，带有滚动吸附 */
 .section {
     padding: var(--spacing-4xl) 0;
-    scroll-snap-align: start;
-    scroll-margin-top: var(--header-height);
+    scroll-snap-align: start; /* 滚动时吸附到区域 */
+    scroll-margin-top: var(--header-height); /* 考虑固定头部 */
 }
 
+/* 区域标题，带有下划线装饰 */
 .section-title {
     font-size: var(--font-size-3xl);
     font-weight: var(--font-weight-bold);
@@ -24,6 +42,7 @@
     position: relative;
 }
 
+/* 蓝色下划线装饰 */
 .section-title::after {
     content: '';
     display: block;
@@ -34,6 +53,11 @@
     border-radius: var(--radius-full);
 }
 
+/* ============================================
+   头部样式
+   固定头部，带有模糊背景
+   ============================================ */
+
 .header {
     position: fixed;
     top: 0;
@@ -41,14 +65,26 @@
     right: 0;
     height: var(--header-height);
     background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /* 模糊效果，现代感 */
     border-bottom: 1px solid var(--color-border-light);
     z-index: var(--z-index-sticky);
     transition: box-shadow var(--transition-normal);
 }
 
+/* 滚动时添加阴影 */
 .header.scrolled {
     box-shadow: var(--shadow-md);
+}
+
+/* 移动端头部高度调整 */
+@media (max-width: 768px) {
+    .header {
+        height: 56px;
+    }
+    
+    :root {
+        --header-height: 56px;
+    }
 }
 
 .nav {
@@ -128,32 +164,54 @@
     display: none;
     padding: var(--spacing-sm);
     color: var(--color-text-primary);
+    background: transparent;
+    border: none;
+    cursor: pointer;
 }
+
+/* Show hamburger menu on mobile */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+    
+    .nav-toggle svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* ============================================
+   Hero 区域
+   全屏着陆区域，带有动画标题
+   大背景 Logo + 艺术化文字布局
+   ============================================ */
 
 .hero {
     position: relative;
-    height: 100vh;
+    height: 100vh; /* 全屏高度 */
     display: flex;
     align-items: center;
     justify-content: flex-end;
     padding: calc(var(--header-height) + var(--spacing-3xl)) var(--spacing-4xl) var(--spacing-3xl);
     overflow: hidden;
-    scroll-snap-align: start;
-    scroll-margin-top: var(--header-height);
+    scroll-snap-align: start; /* 滚动时吸附到 Hero */
+    scroll-margin-top: var(--header-height); /* 考虑固定头部 */
 }
 
+/* 大背景 Logo - 靠左，半透明 */
 .hero-logo-bg {
     position: absolute;
-    left: -15%;
+    left: -15%; /* 稍微超出视口 */
     top: 50%;
     transform: translateY(-50%);
     z-index: 0;
-    opacity: 0.08;
+    opacity: 0.08; /* 微妙的背景效果 */
 }
 
 .hero-logo-bg img {
     width: auto;
-    height: 85vh;
+    height: 85vh; /* 几乎全屏高度 */
     max-height: 800px;
 }
 
@@ -440,11 +498,19 @@
     color: var(--color-primary);
 }
 
+/* ============================================
+   Footer 区域
+   深色背景，包含版权和链接
+   使用 scroll-snap-align: end 实现自然滚动结束
+   ============================================ */
+
 .footer {
     background: var(--color-bg-dark);
     color: var(--color-text-light);
     padding: var(--spacing-2xl) 0;
-    scroll-snap-align: end;
+    scroll-snap-align: end; /* 自然滚动结束位置 */
+    position: relative;
+    z-index: 10; /* 确保 footer 在其他元素之上 */
 }
 
 .footer-content {
@@ -526,15 +592,15 @@
     }
     
     .hero-logo-bg {
-        left: 50%;
+        left: 0;
         top: 50%;
-        transform: translate(-50%, -50%);
+        transform: translateY(-50%);
         opacity: 0.08;
     }
     
     .hero-logo-bg img {
-        height: 60vh;
-        max-height: 400px;
+        height: 100vh;
+        max-height: none;
     }
     
     .hero-text-group {
@@ -553,17 +619,49 @@
         -webkit-text-stroke: 2px var(--color-text-primary);
     }
     
+    .hero-zh-char-1 {
+        font-size: 20vw;
+    }
+    
+    .hero-zh-char-2 {
+        font-size: 11vw;
+    }
+    
+    .hero-zh-char-3 {
+        font-size: 11vw;
+    }
+    
+    .hero-zh-char-4 {
+        font-size: 20vw;
+    }
+    
+    .hero-zh-char-5 {
+        font-size: 14vw;
+    }
+    
+    .hero-zh-char-6 {
+        font-size: 12vw;
+    }
+    
+    .hero-zh-char-7 {
+        font-size: 10vw;
+    }
+    
+    .hero-zh-char-8 {
+        font-size: 15vw;
+    }
+    
     .hero-title-en {
         transform: translateX(1.5vw);
         gap: 0.3rem;
     }
     
     .hero-en-word {
-        font-size: 1.5vw;
+        font-size: 2vw;
     }
     
     .hero-en-2 {
-        font-size: 1.8vw;
+        font-size: 2.5vw;
     }
     
     .hero-group-sandi {
@@ -572,24 +670,18 @@
     }
     
     .nav-menu {
-        display: none;
-        position: absolute;
-        top: var(--header-height);
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        background: var(--color-bg-primary);
-        padding: var(--spacing-lg);
-        gap: var(--spacing-md);
-        border-bottom: 1px solid var(--color-border);
-    }
-    
-    .nav-menu.active {
         display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: var(--spacing-md);
     }
     
     .nav-toggle {
-        display: block;
+        display: none;
+    }
+    
+    .nav-link {
+        padding: var(--spacing-sm);
     }
     
     .features-grid {
@@ -617,5 +709,110 @@
     .requirements-list {
         flex-direction: column;
         gap: var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: calc(var(--header-height) + var(--spacing-xl)) var(--spacing-sm) var(--spacing-xl);
+    }
+    
+    .hero-logo-bg {
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .hero-logo-bg img {
+        height: 100vh;
+        max-height: none;
+    }
+    
+    .hero-text-group {
+        padding: 5vh 2vw;
+    }
+    
+    .hero-zh-char {
+        -webkit-text-stroke: 1.5px var(--color-text-primary);
+    }
+    
+    .hero-zh-char-1 {
+        font-size: 18vw;
+    }
+    
+    .hero-zh-char-2 {
+        font-size: 10vw;
+    }
+    
+    .hero-zh-char-3 {
+        font-size: 10vw;
+    }
+    
+    .hero-zh-char-4 {
+        font-size: 18vw;
+    }
+    
+    .hero-zh-char-5 {
+        font-size: 12vw;
+    }
+    
+    .hero-zh-char-6 {
+        font-size: 11vw;
+    }
+    
+    .hero-zh-char-7 {
+        font-size: 9vw;
+    }
+    
+    .hero-zh-char-8 {
+        font-size: 13vw;
+    }
+    
+    .hero-en-word {
+        font-size: 1.5vw;
+    }
+    
+    .hero-en-2 {
+        font-size: 2vw;
+    }
+    
+    .nav-title {
+        font-size: var(--font-size-base);
+    }
+    
+    .nav-logo {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .footer {
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .footer-title {
+        font-size: var(--font-size-base);
+    }
+    
+    .footer-logo {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .footer-links {
+        gap: var(--spacing-md);
+    }
+    
+    .footer-copyright {
+        font-size: var(--font-size-xs);
+    }
+    
+    .section-title {
+        font-size: var(--font-size-xl);
+        margin-bottom: var(--spacing-xl);
+    }
+    
+    .section-title::after {
+        width: 40px;
+        height: 3px;
     }
 }
