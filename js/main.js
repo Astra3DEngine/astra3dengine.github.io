@@ -149,6 +149,25 @@
 
         if (!pageNav) return;
 
+        // Initial check - hide nav if hero is visible on load
+        function checkInitialVisibility() {
+            if (!heroSection || !footer) return;
+            
+            const heroRect = heroSection.getBoundingClientRect();
+            const heroVisible = heroRect.bottom > 0 && heroRect.top < window.innerHeight;
+            const footerRect = footer.getBoundingClientRect();
+            const footerVisible = footerRect.top < window.innerHeight;
+            
+            if (heroVisible) {
+                pageNav.classList.remove('visible');
+            } else if (!footerVisible) {
+                pageNav.classList.add('visible');
+            }
+        }
+        
+        // Run initial check immediately
+        checkInitialVisibility();
+
         // Click handlers for navigation items
         pageNavItems.forEach(function(item) {
             item.addEventListener('click', function() {
