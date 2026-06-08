@@ -1,8 +1,6 @@
 {
     "nav": {
-        "features": "功能特性",
-        "techStack": "技术栈",
-        "quickStart": "快速开始",
+        "download": "使用",
         "github": "GitHub"
     },
     "hero": {
@@ -12,56 +10,59 @@
         "getStarted": "开始使用",
         "viewOnGithub": "查看 GitHub"
     },
+    "pageNav": {
+        "home": "首页",
+        "features": "特性",
+        "use": "使用"
+    },
     "features": {
-        "title": "功能特性",
-        "viewport": {
-            "title": "3D 视口",
-            "description": "直观的 3D 视口，支持透视和正交模式、多视口布局以及定向球，便于场景导航。"
-        },
-        "hierarchy": {
-            "title": "场景层级",
-            "description": "树形结构的场景层级面板，支持拖拽排序、多选操作和右键菜单。"
-        },
-        "inspector": {
-            "title": "属性检查器",
-            "description": "动态属性检查器，包含变换控件、颜色选择器和组件化编辑功能。"
-        },
-        "assets": {
-            "title": "资源管理",
-            "description": "导入和管理 3D 模型、纹理和预制件，内置文件浏览器和预览支持。"
-        },
-        "export": {
-            "title": "导出与构建",
-            "description": "将游戏导出为独立的 Web 应用程序，或使用 Electron 构建桌面版本。"
-        },
-        "i18n": {
-            "title": "多语言支持",
-            "description": "内置英语、中文、日语和俄语翻译的多语言支持。"
-        }
+        "title": "特性",
+        "webEngine": "Web 3D 游戏引擎",
+        "webEngineDesc": "一个玩笑般的3D引擎",
+        "editorRuntime": "编辑器与运行时分离",
+        "editorRuntimeDesc": "导出的游戏可独立运行，不依赖编辑器",
+        "multiViewport": "多视口布局",
+        "multiViewportDesc": "四视图：透视 + 正交三视图",
+        "orientationCube": "定向球导航",
+        "orientationCubeDesc": "26面体截角立方体，快速切换视角",
+        "prefab": "预制件系统",
+        "prefabDesc": "通过预制件实例化复用游戏对象",
+        "gizmo": "Gizmo 工具",
+        "gizmoDesc": "移动/旋转/缩放变换工具",
+        "assetManager": "资源管理器",
+        "assetManagerDesc": "GLTF/GLB 导入，纹理管理",
+        "pluginSystem": "插件系统",
+        "pluginSystemDesc": "可扩展架构，支持主题插件",
+        "multilang": "多语言支持",
+        "multilangDesc": "中文、英文、日文、俄语、拉丁语",
+        "themeSwitch": "主题切换",
+        "themeSwitchDesc": "浅色/深色模式，可扩展主题",
+        "voxelEditor": "方块建模器",
+        "voxelEditorDesc": "通过固定大小方块搭建模型",
+        "animationEngine": "骨骼动画引擎",
+        "animationEngineDesc": "关键帧编辑、时间轴、蒙皮绑定",
+        "scriptSystem": "分层脚本系统",
+        "scriptSystemDesc": "预设组件 → 积木编程 → 简化脚本 → JavaScript",
+        "techStack": "现代技术栈",
+        "techStackDesc": "React 18 + Three.js + Vite + Electron",
+        "inDevelopment": "开发中"
     },
-    "techStack": {
-        "title": "技术栈"
-    },
-    "quickStart": {
-        "title": "快速开始",
-        "step1": {
-            "title": "克隆仓库",
-            "code": "git clone https://github.com/LanwyWriteXU/Astra3DEngine.git"
-        },
-        "step2": {
-            "title": "安装依赖",
-            "code": "cd Astra3DEngine && pnpm install"
-        },
-        "step3": {
-            "title": "启动开发",
-            "code": "pnpm run dev"
-        },
-        "requirements": "系统要求",
-        "nodejs": "Node.js >= 16",
-        "pnpm": "pnpm >= 8"
+    "download": {
+        "title": "使用",
+        "description": "获取 Astra 3D Engine 的最新版本，开始创建令人惊叹的 3D 体验！",
+        "webVersion": "在线版",
+        "webInfo": "直接在浏览器中运行，无需安装",
+        "launch": "启动在线版",
+        "release": "发行版",
+        "releaseInfo": "从 GitHub 下载最新稳定版本",
+        "downloadRelease": "下载发行版",
+        "sourceCode": "源代码",
+        "sourceInfo": "从 GitHub 克隆并从源代码构建",
+        "viewOnGitHub": "查看 GitHub",
+        "devVersion": "开发版本"
     },
     "footer": {
-        "copyright": "Copyright 2024 Cyberexplorer. 保留所有权利。"
+        "copyright": "Copyright 2026 Cyberexplorer. 保留所有权利。"
     },
     "lang": {
         "en": "英语",

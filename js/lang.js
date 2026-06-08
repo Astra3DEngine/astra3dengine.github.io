@@ -142,25 +142,13 @@
          */
         setupLanguageToggle() {
             const toggleBtn = document.querySelector('.lang-toggle');
-            const dropdown = document.querySelector('.lang-dropdown');
 
-            if (toggleBtn && dropdown) {
-                toggleBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    dropdown.classList.toggle('active');
-                });
-
-                document.addEventListener('click', () => {
-                    dropdown.classList.remove('active');
-                });
-
-                dropdown.querySelectorAll('.lang-option').forEach(option => {
-                    option.addEventListener('click', async (e) => {
-                        e.preventDefault();
-                        const lang = e.currentTarget.getAttribute('data-lang');
-                        await this.switchLanguage(lang);
-                        dropdown.classList.remove('active');
-                    });
+            if (toggleBtn) {
+                // Click to toggle between zh and en
+                toggleBtn.addEventListener('click', async (e) => {
+                    e.preventDefault();
+                    const nextLang = this.currentLang === 'zh' ? 'en' : 'zh';
+                    await this.switchLanguage(nextLang);
                 });
             }
 
@@ -172,6 +160,13 @@
          * @function updateToggleButton
          */
         updateToggleButton() {
+            const toggleBtn = document.querySelector('.lang-toggle');
+            if (toggleBtn) {
+                // Update button text to show current language
+                const langText = this.currentLang === 'zh' ? '中文' : 'EN';
+                toggleBtn.textContent = langText;
+            }
+            
             document.querySelectorAll('.lang-option').forEach(option => {
                 const lang = option.getAttribute('data-lang');
                 option.classList.toggle('active', lang === this.currentLang);

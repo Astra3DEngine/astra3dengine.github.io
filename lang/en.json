@@ -1,8 +1,6 @@
 {
     "nav": {
-        "features": "Features",
-        "techStack": "Tech Stack",
-        "quickStart": "Quick Start",
+        "download": "Use",
         "github": "GitHub"
     },
     "hero": {
@@ -12,56 +10,59 @@
         "getStarted": "Get Started",
         "viewOnGithub": "View on GitHub"
     },
+    "pageNav": {
+        "home": "Home",
+        "features": "Features",
+        "use": "Use"
+    },
     "features": {
         "title": "Features",
-        "viewport": {
-            "title": "3D Viewport",
-            "description": "Intuitive 3D viewport with perspective and orthographic modes, multi-viewport layout, and orientation cube for easy navigation."
-        },
-        "hierarchy": {
-            "title": "Scene Hierarchy",
-            "description": "Tree-structured scene hierarchy with drag-and-drop reordering, multi-selection, and context menu support."
-        },
-        "inspector": {
-            "title": "Inspector Panel",
-            "description": "Dynamic property inspector with transform controls, color pickers, and component-based editing."
-        },
-        "assets": {
-            "title": "Asset Management",
-            "description": "Import and manage 3D models, textures, and prefabs with built-in file browser and preview support."
-        },
-        "export": {
-            "title": "Export & Build",
-            "description": "Export your games as standalone web applications or build desktop versions with Electron."
-        },
-        "i18n": {
-            "title": "i18n Support",
-            "description": "Multi-language support with English, Chinese, Japanese, and Russian translations built-in."
-        }
+        "webEngine": "Web 3D Game Engine",
+        "webEngineDesc": "A Joking 3D Engine",
+        "editorRuntime": "Editor & Runtime Separation",
+        "editorRuntimeDesc": "Exported games run independently without editor",
+        "multiViewport": "Multi-Viewport Layout",
+        "multiViewportDesc": "4-view layout: perspective + orthographic views",
+        "orientationCube": "Orientation Cube Navigation",
+        "orientationCubeDesc": "26-face truncated cube for quick view switching",
+        "prefab": "Prefab System",
+        "prefabDesc": "Reuse game objects with prefab instantiation",
+        "gizmo": "Gizmo Tools",
+        "gizmoDesc": "Move/Rotate/Scale transform tools",
+        "assetManager": "Asset Manager",
+        "assetManagerDesc": "GLTF/GLB import, texture management",
+        "pluginSystem": "Plugin System",
+        "pluginSystemDesc": "Extensible architecture with theme plugins",
+        "multilang": "Multi-Language Support",
+        "multilangDesc": "Chinese, English, Japanese, Russian, Latin",
+        "themeSwitch": "Theme Switching",
+        "themeSwitchDesc": "Light/Dark mode with extensible themes",
+        "voxelEditor": "Voxel Editor",
+        "voxelEditorDesc": "Build models with fixed-size blocks",
+        "animationEngine": "Animation Engine",
+        "animationEngineDesc": "Keyframe editing, timeline, skeleton binding",
+        "scriptSystem": "Layered Script System",
+        "scriptSystemDesc": "Presets → Visual scripting → Simplified JS → Full JS",
+        "techStack": "Modern Tech Stack",
+        "techStackDesc": "React 18 + Three.js + Vite + Electron",
+        "inDevelopment": "In Development"
     },
-    "techStack": {
-        "title": "Tech Stack"
-    },
-    "quickStart": {
-        "title": "Quick Start",
-        "step1": {
-            "title": "Clone Repository",
-            "code": "git clone https://github.com/LanwyWriteXU/Astra3DEngine.git"
-        },
-        "step2": {
-            "title": "Install Dependencies",
-            "code": "cd Astra3DEngine && pnpm install"
-        },
-        "step3": {
-            "title": "Start Development",
-            "code": "pnpm run dev"
-        },
-        "requirements": "Requirements",
-        "nodejs": "Node.js >= 16",
-        "pnpm": "pnpm >= 8"
+    "download": {
+        "title": "Use",
+        "description": "Get the latest version of Astra 3D Engine and start creating amazing 3D experiences!",
+        "webVersion": "Online Version",
+        "webInfo": "Run directly in your browser, no installation required",
+        "launch": "Launch Online Version",
+        "release": "Release Version",
+        "releaseInfo": "Download the latest stable release from GitHub",
+        "downloadRelease": "Download Release",
+        "sourceCode": "Source Code",
+        "sourceInfo": "Clone from GitHub and build from source",
+        "viewOnGitHub": "View on GitHub",
+        "devVersion": "Development Version"
     },
     "footer": {
-        "copyright": "Copyright 2024 Cyberexplorer. All rights reserved."
+        "copyright": "Copyright 2026 Cyberexplorer. All rights reserved."
     },
     "lang": {
         "en": "English",

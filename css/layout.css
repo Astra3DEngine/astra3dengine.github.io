@@ -11,6 +11,8 @@
 
 .section {
     padding: var(--spacing-4xl) 0;
+    scroll-snap-align: start;
+    scroll-margin-top: var(--header-height);
 }
 
 .section-title {
@@ -130,12 +132,14 @@
 
 .hero {
     position: relative;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     padding: calc(var(--header-height) + var(--spacing-3xl)) var(--spacing-4xl) var(--spacing-3xl);
     overflow: hidden;
+    scroll-snap-align: start;
+    scroll-margin-top: var(--header-height);
 }
 
 .hero-logo-bg {
@@ -440,6 +444,7 @@
     background: var(--color-bg-dark);
     color: var(--color-text-light);
     padding: var(--spacing-2xl) 0;
+    scroll-snap-align: end;
 }
 
 .footer-content {
