@@ -1,0 +1,2 @@
+const s=async e=>(e.log(e.msg("activated")),e.registerHook("onObjectAdd",o=>{e.log(e.msg("objectAdded",o.name))}),e.registerHook("onObjectDelete",o=>{e.log(e.msg("objectDeleted",o))}),e.registerHook("onSceneSave",o=>{e.log(e.msg("sceneSaved"))}),{sayHello:()=>{e.showNotification(e.msg("hello"),"info")}}),a=async(e,n)=>{e.log(e.msg("deactivated"))},t={activate:s,deactivate:a};export{t as default};
+//# sourceMappingURL=index-y5tlTE_k.js.map

@@ -1,0 +1,2 @@
+const e="示例插件",t="这是一个示例插件，展示插件系统的基本功能",c="示例插件已激活！",d="示例插件已停用",o="新对象被添加: {0}",n="对象被删除: {0}",a="场景被保存",s="你好！来自示例插件 👋",i={name:e,description:t,activated:c,deactivated:d,objectAdded:o,objectDeleted:n,sceneSaved:a,hello:s};export{c as activated,d as deactivated,i as default,t as description,s as hello,e as name,o as objectAdded,n as objectDeleted,a as sceneSaved};
+//# sourceMappingURL=zh-BtAx5Ilp.js.map
